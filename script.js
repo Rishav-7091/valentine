@@ -97,8 +97,9 @@ function next() {
     m.innerHTML = page(
       "🤞 Promise Day",
       "photo5",
-      "I don’t promise forever, Anjali — I promise to be genuine today, to listen better, to care truly, and to value the moments we share. Will you accept this promise?"
+      "Anjali, I promise to walk along with you, to stand by your side when you need support, to care for you in your smiles and your silence, and to be someone you can always count on. I really love you. Will you accept this promise from me?"
     );
+
 
   // HUG
   if(step==6)
