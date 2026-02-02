@@ -3,10 +3,26 @@ body {
   text-align: center;
   font-family: Arial;
   padding: 20px;
+  overflow-x: hidden;
 }
 
-h1 {
-  color: #e60073;
+/* START SCREEN */
+#startScreen {
+  margin-top: 200px;
+}
+
+.startBtn {
+  background: #ff1a75;
+  color: white;
+  padding: 15px 25px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 .gallery {
@@ -20,11 +36,6 @@ h1 {
   margin: 10px;
   border-radius: 15px;
   box-shadow: 0 0 10px pink;
-  transition: 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
 }
 
 .letter {
@@ -32,7 +43,20 @@ h1 {
   padding: 15px;
   margin: 20px;
   border-radius: 10px;
-  font-size: 18px;
+}
+
+/* HEARTS BACKGROUND */
+.hearts span {
+  position: fixed;
+  bottom: -10px;
+  animation: rise 8s linear infinite;
+  color: #ff4da6;
+  font-size: 20px;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-1000px); opacity: 0; }
 }
 
 .btn {
@@ -42,23 +66,4 @@ h1 {
   margin: 10px;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.hidden {
-  display: none;
-}
-
-.yes {
-  background: green;
-  color: white;
-  padding: 10px;
-}
-
-.no {
-  background: red;
-  color: white;
-  padding: 10px;
-  position: relative;
 }
