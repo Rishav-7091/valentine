@@ -70,7 +70,7 @@ function next(){
  if(step==3)
  m.innerHTML=page(
  "🍫 Chocolate Day",
- "photo2",
+ "photo3",
  "Just like chocolate, you make life sweeter without trying. Will you take this sweetness from me?"
  );
 
