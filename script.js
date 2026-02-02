@@ -1,32 +1,41 @@
-// ===== PHOTO GALLERY (EDIT ONLY THIS PART) =====
-
-// Just write your photo names here – as many as you want
+// ===== PHOTOS (USE JPEG FORMAT) =====
 const photos = [
-  "photo1.jpg",
-  "photo2.jpg",
-  "photo3.jpg",
-  "photo4.jpg",
-  "photo5.jpg",
-  "photo6.jpg",
-  "photo7.jpg",
-  "photo8.jpg",
-  "photo9.jpg"
+  "photo1.jpeg",
+  "photo2.jpeg",
+  "photo3.jpeg",
+  "photo4.jpeg",
+  "photo5.jpeg",
+  "photo6.jpeg",
+  "photo7.jpeg",
+  "photo8.jpeg",
+  "photo9.jpeg"
 ];
 
-// AUTO LOAD – NO NEED TO TOUCH THIS
+// LOAD IMAGES
 const gallery = document.getElementById("gallery");
 
 photos.forEach(name => {
   const img = document.createElement("img");
   img.src = "images/" + name;
-  img.alt = "memory";
+
+  // IMPORTANT DEBUG
+  img.onerror = function() {
+    console.log("Not found:", name);
+  };
+
   gallery.appendChild(img);
 });
 
 
-// ===== MUSIC =====
-function playMusic() {
+// ===== START BUTTON LOGIC =====
+function startSite() {
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("mainContent").classList.remove("hidden");
+
+  // PLAY MUSIC AFTER CLICK
   document.getElementById("song").play();
+
+  createHearts();
 }
 
 
@@ -44,4 +53,20 @@ function moveNo() {
   btn.style.position = "absolute";
   btn.style.left = Math.random() * 250 + "px";
   btn.style.top = Math.random() * 250 + "px";
+}
+
+
+// ===== FLOATING HEARTS =====
+function createHearts() {
+  const container = document.querySelector(".hearts");
+
+  setInterval(() => {
+    const heart = document.createElement("span");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    container.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+  }, 300);
 }
