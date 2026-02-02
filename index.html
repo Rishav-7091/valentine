@@ -7,9 +7,18 @@
 
 <body>
 
+<!-- START SCREEN -->
+<div id="startScreen">
+  <button class="startBtn" onclick="startSite()">
+    Start My Surprise 💖
+  </button>
+</div>
+
+<!-- MAIN CONTENT (HIDDEN FIRST) -->
+<div id="mainContent" class="hidden">
+
 <h1>Dear Anjali 💖</h1>
 
-<!-- GALLERY WILL LOAD AUTOMATICALLY -->
 <div class="gallery" id="gallery"></div>
 
 <div class="letter">
@@ -30,15 +39,9 @@ I never want to lose.
 </p>
 </div>
 
-<button class="btn" onclick="playMusic()">Play Our Song 🎵</button>
-
 <button class="btn" onclick="startGame()">
 Will You Be My Valentine? 💌
 </button>
-
-<audio id="song">
-  <source src="images/song.mp3">
-</audio>
 
 <div id="gameBox" class="hidden">
   <h2>Anjali, will you be my Valentine?</h2>
@@ -46,6 +49,14 @@ Will You Be My Valentine? 💌
   <button class="yes" onclick="yes()">YES 😍</button>
   <button class="no" onmouseover="moveNo()">NO 😜</button>
 </div>
+
+<audio id="song">
+  <source src="images/song.mp3">
+</audio>
+
+</div>
+
+<div class="hearts"></div>
 
 <script src="script.js"></script>
 
