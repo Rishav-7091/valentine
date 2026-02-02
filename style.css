@@ -1,51 +1,65 @@
 body {
   background: linear-gradient(to bottom, #ffe6f2, #ffb3d9);
-  text-align: center;
-  font-family: Arial;
   margin: 0;
   height: 100vh;
-  overflow: hidden;        /* NO SCROLL */
+  overflow: hidden;
+  font-family: 'Dancing Script', cursive;
 }
 
 .hidden { display: none; }
 
-/* START BUTTON */
 .startBtn {
   margin-top: 40vh;
   padding: 16px 26px;
-  font-size: 20px;
+  font-size: 24px;
   background: #ff1a75;
   color: white;
   border: none;
   border-radius: 15px;
+  font-family: 'Great Vibes', cursive;
 }
 
-/* IMAGE ANIMATION */
+/* SPLIT LAYOUT */
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LEFT IMAGE */
+.left {
+  width: 45%;
+  text-align: center;
+}
+
 .dayImage {
-  width: 300px;                 /* BIGGER IMAGE */
-  border-radius: 18px;
+  width: 360px;
+  border-radius: 20px;
+
   opacity: 0;
-  transform: scale(0.9);
-  animation: fadeIn 2.2s forwards;
-  margin-top: 8vh;
+  animation: fadeIn 1.6s forwards;
+}
+
+/* RIGHT TEXT */
+.right {
+  width: 50%;
+  padding: 20px;
+  font-size: 26px;
+  line-height: 1.3;
+
+  opacity: 0;
+  animation: showText 1s forwards;
+  animation-delay: 1.6s;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* TEXT AREA AT BOTTOM */
-.textBox {
-  position: absolute;
-  bottom: 12vh;                 /* LITTLE ABOVE BOTTOM */
-  width: 100%;
-  padding: 0 15px;
-  opacity: 0;
-  animation: showText 1s forwards;
-  animation-delay: 2.3s;        /* AFTER IMAGE */
+  to { opacity: 1; }
 }
 
 @keyframes showText {
@@ -59,16 +73,19 @@ body {
   margin: 10px;
   border: none;
   border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Dancing Script', cursive;
 }
 
 .no { position: relative; }
 
-/* HEARTS */
+/* hearts */
 .hearts span {
   position: fixed;
   bottom: -10px;
   animation: rise 8s linear infinite;
 }
+
 @keyframes rise {
   0% { transform: translateY(0); }
   100% { transform: translateY(-1000px); }
