@@ -1,141 +1,139 @@
 let step = 0;
 
+// SUPPORT BOTH JPG & JPEG
+function img(name) {
+  return `images/${name}`;
+}
+
+// PRELOAD IMAGES TO AVOID DELAY
+const allImages = [
+ "photo1","photo2","photo4","photo5",
+ "photo6","photo7","photo8","photo9"
+];
+
+allImages.forEach(n=>{
+  let i=new Image();
+  i.src=img(n+".jpeg");
+  i.onerror=()=> i.src=img(n+".jpg");
+});
+
 function startSite() {
-  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("startScreen").style.display="none";
   document.getElementById("main").classList.remove("hidden");
   document.getElementById("song").play();
   createHearts();
   next();
 }
 
-function template(title, img, text) {
+// LAYOUT BUILDER
+function page(title, image, text) {
+
+  let imgTag="";
+
+  if(image){
+    imgTag = `
+      <div class="left">
+        <img class="dayImage" src="${img(image+".jpeg")}"
+        onerror="this.src='${img(image+".jpg")}'">
+      </div>`;
+  }
+
   return `
-    <h2>${title}</h2>
+  <div class="container">
 
-    ${img ? `<img class="dayImage" src="images/${img}">` : ""}
+    ${imgTag}
 
-    <div class="textBox">
+    <div class="right">
+      <h2>${title}</h2>
+
       <p>${text}</p>
 
       <button class="btn" onclick="next()">YES 💖</button>
       <button class="btn no" onmouseover="run(this)">NO 😜</button>
+
     </div>
-  `;
+
+  </div>`;
 }
 
 function next() {
   step++;
-  const m = document.getElementById("main");
+  const m=document.getElementById("main");
 
-  // ===== 1. ROSE DAY =====
-  if(step==1) {
-    m.innerHTML = template(
+  // ROSE
+  if(step==1)
+    m.innerHTML = page(
       "🌹 Rose Day",
-      "photo1.jpeg",
-      "Anjali, will you accept my rose and let its fragrance carry the feelings I’m too shy to say?"
+      "photo1",
+      "Anjali, will you accept my rose and let its fragrance carry the feelings my heart holds for you?"
     );
-  }
 
-  // ===== 2. PROPOSE DAY =====
-  if(step==2) {
-    m.innerHTML = template(
+  // PROPOSE
+  if(step==2)
+    m.innerHTML = page(
       "💍 Propose Day",
       null,
-      "Anjali, my heart found its calm in you. I don’t have grand promises, just a simple wish — to be someone who makes your days lighter and your smiles easier. Will you accept my proposal?"
+      "Anjali, being around you feels peaceful and real. I would love the chance to walk a meaningful part of life with you. Will you accept my proposal?"
     );
-  }
 
-  // ===== 3. CHOCOLATE DAY =====
-  if(step==3) {
-    m.innerHTML = template(
+  // CHOCOLATE
+  if(step==3)
+    m.innerHTML = page(
       "🍫 Chocolate Day",
-      "photo2.jpeg",
-      "Just like chocolate, you make everything sweeter without trying. Will you take this sweetness from me?"
+      "photo2",
+      "Just like chocolate, you make life softer and sweeter. Will you take this sweetness from me?"
     );
-  }
 
-  // ===== 4. TEDDY DAY =====
-  if(step==4) {
-    m.innerHTML = `
-      <h2>🧸 Teddy Day</h2>
+  // TEDDY
+  if(step==4)
+    m.innerHTML = page(
+      "🧸 Teddy Day",
+      "photo4",
+      "A teddy to remind you that you’re cared for even when I’m not near. Will you accept it?"
+    );
 
-      <img class="dayImage" src="images/photo4.jpeg">
-      <img class="dayImage" src="images/photo9.jpeg">
-
-      <div class="textBox">
-        <p>Two teddies, one wish — that you always have something to hold when I’m not around. Will you accept them from me?</p>
-
-        <button class="btn" onclick="next()">YES 💖</button>
-        <button class="btn no" onmouseover="run(this)">NO 😜</button>
-      </div>
-    `;
-  }
-
-  // ===== 5. PROMISE DAY (CUSTOMIZED) =====
-  if(step==5) {
-    m.innerHTML = template(
+  // PROMISE – CUSTOMIZED (NO LIFELONG)
+  if(step==5)
+    m.innerHTML = page(
       "🤞 Promise Day",
-      "photo5.jpeg",
-      "I don’t promise a perfect journey, Anjali — only that I’ll try to understand you, respect you, and be honest in the moments we share. Will you accept this simple promise from me?"
+      "photo5",
+      "I don’t promise forever, Anjali — I promise to be genuine today, to listen better, to care truly, and to value the moments we share. Will you accept this promise?"
     );
-  }
 
-  // ===== 6. HUG DAY =====
-  if(step==6) {
-    m.innerHTML = template(
+  // HUG
+  if(step==6)
+    m.innerHTML = page(
       "🤗 Hug Day",
-      "photo6.jpeg",
-      "If a hug could speak, it would tell you how safe and special you feel to me. Can I have a warm hug from you?"
+      "photo6",
+      "If feelings could be wrapped, they would look like a warm hug. Can I have one from you?"
     );
-  }
 
-  // ===== 7. KISS DAY =====
-  if(step==7) {
-    m.innerHTML = template(
+  // KISS
+  if(step==7)
+    m.innerHTML = page(
       "💋 Kiss Day",
-      "photo7.jpeg",
-      "A tiny kiss carrying all the feelings my words miss. Will you let me steal one?"
+      "photo7",
+      "A gentle kiss carrying all the emotions my words can’t hold. May I?"
     );
-  }
 
-  // ===== 8. VALENTINE DAY =====
-  if(step==8) {
-    m.innerHTML = `
-      <h2>❤️ Valentine’s Day</h2>
-
-      <img class="dayImage" src="images/photo8.jpeg">
-
-      <div class="textBox">
-        <p>
-        Anjali,  
-        Even from dooron dooron, you feel close to my heart.  
-        You are the reason my life feels beautiful.  
-        Every moment with you becomes a memory  
-        I never want to lose.
-        </p>
-
-        <h3>Will you be my Valentine?</h3>
-
-        <button class="btn" onclick="final()">YES 😍</button>
-        <button class="btn no" onmouseover="run(this)">NO 😜</button>
-      </div>
-    `;
-  }
+  // VALENTINE
+  if(step==8)
+    m.innerHTML = page(
+      "❤️ Valentine’s Day",
+      "photo8",
+      "Anjali, even from dooron dooron you feel close to my heart. You make my ordinary days beautiful. Will you be my Valentine?"
+    );
 }
 
-function final() {
-  alert("You made Rishav the happiest person alive ❤️");
-}
-
-function run(b) {
+function run(b){
   b.style.position="absolute";
   b.style.left=Math.random()*250+"px";
   b.style.top=Math.random()*250+"px";
 }
 
-function createHearts() {
+function createHearts(){
  setInterval(()=>{
-   const h=document.createElement("span");
+   let h=document.createElement("span");
    h.innerHTML="❤️";
    h.style.left=Math.random()*100+"vw";
    document.querySelector(".hearts").appendChild(h);
