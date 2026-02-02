@@ -2,13 +2,17 @@ body {
   background: linear-gradient(to bottom, #ffe6f2, #ffb3d9);
   text-align: center;
   font-family: Arial;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;        /* NO SCROLL */
 }
 
 .hidden { display: none; }
 
+/* START BUTTON */
 .startBtn {
-  margin-top: 200px;
-  padding: 15px 25px;
+  margin-top: 40vh;
+  padding: 16px 26px;
   font-size: 20px;
   background: #ff1a75;
   color: white;
@@ -16,10 +20,36 @@ body {
   border-radius: 15px;
 }
 
-img {
-  width: 220px;
-  margin: 10px;
-  border-radius: 15px;
+/* IMAGE ANIMATION */
+.dayImage {
+  width: 300px;                 /* BIGGER IMAGE */
+  border-radius: 18px;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeIn 2.2s forwards;
+  margin-top: 8vh;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* TEXT AREA AT BOTTOM */
+.textBox {
+  position: absolute;
+  bottom: 12vh;                 /* LITTLE ABOVE BOTTOM */
+  width: 100%;
+  padding: 0 15px;
+  opacity: 0;
+  animation: showText 1s forwards;
+  animation-delay: 2.3s;        /* AFTER IMAGE */
+}
+
+@keyframes showText {
+  to { opacity: 1; }
 }
 
 .btn {
@@ -31,17 +61,14 @@ img {
   border-radius: 10px;
 }
 
-.no {
-  position: relative;
-}
+.no { position: relative; }
 
-/* hearts */
+/* HEARTS */
 .hearts span {
   position: fixed;
   bottom: -10px;
   animation: rise 8s linear infinite;
 }
-
 @keyframes rise {
   0% { transform: translateY(0); }
   100% { transform: translateY(-1000px); }
