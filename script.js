@@ -55,7 +55,7 @@ function next(){
  m.innerHTML=page(
  "🌹 Rose Day",
  "photo1",
- "Anjali, will you accept my rose and let its fragrance carry the feelings my heart holds?"
+ "Anjali, my Chinna, I don’t know how to say everything perfectly, so I’m starting with a simple rose. Every time I see you, everything inside me feels calm, safe, and happy. You’ve slowly become a part of my everyday thoughts. Will you accept this rose and let me stay a little closer to your heart?"
  );
 
  // 2 PROPOSE – PHOTO9 ADDED
@@ -63,7 +63,7 @@ function next(){
  m.innerHTML=page(
  "💍 Propose Day",
  "photo9",
- "Anjali, being around you feels peaceful and real. I would love the chance to walk a meaningful part of life with you, sharing smiles and small beautiful moments. Will you accept my proposal?"
+ "Chinna, I never planned to fall for someone like this, but I like the way you talk, the way you care, the way even silence with you feels enough. I don’t want perfection just you as you are. Will you let me be yours?"
  );
 
  // 3 CHOCOLATE
@@ -71,7 +71,7 @@ function next(){
  m.innerHTML=page(
  "🍫 Chocolate Day",
  "photo3",
- "Just like chocolate, you make life sweeter without trying. Will you take this sweetness from me?"
+ "Anjali, You make my days sweeter in ways you don’t even notice. A message from you can change my whole mood, your smile stays in my head longer than it should. If love had a taste, it would feel like you. Will you take this little sweetness from me today?"
  );
 
  // 4 TEDDY
@@ -79,7 +79,7 @@ function next(){
  m.innerHTML=page(
  "🧸 Teddy Day",
  "photo4",
- "A teddy to remind you that you are cared for even when I’m not near. Will you accept it?"
+ "My Chinna, When you’re not near, I miss the smallest things, your voice, your laughter, your silly talks. I wish I could be there to hold you whenever you need comfort. Until then, imagine this teddy is me, quietly loving you. Will you keep it close for me?"
  );
 
  // 5 PROMISE – CUSTOMIZED
@@ -87,7 +87,7 @@ function next(){
  m.innerHTML=page(
  "🤞 Promise Day",
  "photo5",
- "Anjali, I promise to walk along with you, to be there whenever you need me, to care for you in your happy and difficult days, and to love you with a sincere heart. Will you accept this promise?"
+ "Anjali, I can’t promise you a fairy tale, but I can promise to be real with you. To stand beside you when you feel low, to listen when you need someone, to love you in simple, honest ways. I really love you, Chinna. Will you trust me with your heart?"
  );
 
  // 6 HUG
@@ -95,7 +95,7 @@ function next(){
  m.innerHTML=page(
  "🤗 Hug Day",
  "photo6",
- "If feelings could be wrapped, they would look like a warm hug. Can I have one from you?"
+ "Chinna, Sometimes I just want to hold you and let all my feelings rest in that one moment. No words, no explanations — just us. A hug from you would mean more than any long message I can write. Can I have that hug from you today?"
  );
 
  // 7 KISS
@@ -103,7 +103,7 @@ function next(){
  m.innerHTML=page(
  "💋 Kiss Day",
  "photo7",
- "A gentle kiss carrying all the emotions my words miss. May I?"
+ "Anjali, There are feelings I can’t put into sentences. Maybe a small kiss could say them better. Nothing dramatic, just pure love from me to you. Will you let me steal one gentle kiss, Chinna?"
  );
 
  // 8 VALENTINE – FINAL
