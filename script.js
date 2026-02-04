@@ -166,7 +166,7 @@ function run(b){
 function createHearts(){
  setInterval(()=>{
    let h=document.createElement("span");
-   const hearts=["❤️","💖","💕","💞"];
+   const hearts=["♥️","💖","💕","❤️‍🔥"];
    h.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
    h.style.left=Math.random()*100+"vw";
    h.style.fontSize=(14+Math.random()*16)+"px";
